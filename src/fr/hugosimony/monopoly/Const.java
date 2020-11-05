@@ -39,24 +39,34 @@ public class Const {
 	public static final ImageIcon BUTTON_LEFT = new ImageIcon(leftButtonURL);
 	private static final URL rightButtonURL = Main.class.getResource("logos/windowRightButton.png");
 	public static final ImageIcon BUTTON_RIGHT = new ImageIcon(rightButtonURL);
+	private static final URL backOptionsButtonURL = Main.class.getResource("logos/backOptionsButton.png");
+	public static final ImageIcon BUTTON_OPTIONS_BACK = new ImageIcon(backOptionsButtonURL);
+	private static final URL exitGameButtonURL = Main.class.getResource("logos/exitGameButton.png");
+	public static final ImageIcon BUTTON_EXIT_GAME = new ImageIcon(exitGameButtonURL);
 	
 	//***********************************
 	// Titles
 	
+	private static final URL blanckTitleURL = Main.class.getResource("logos/blankTitle.png");
+	public static final ImageIcon TITLE_BLANK = new ImageIcon(blanckTitleURL);
 	private static final URL optionsTitleURL = Main.class.getResource("logos/optionsTitle.png");
 	public static final ImageIcon TITLE_OPTIONS = new ImageIcon(optionsTitleURL);
 	private static final URL windowTitleURL = Main.class.getResource("logos/windowTitle.png");
 	public static final ImageIcon TITLE_WINDOW = new ImageIcon(windowTitleURL);
 	private static final URL windowRestartTitleURL = Main.class.getResource("logos/windowRestartTitle.png");
 	public static final ImageIcon TITLE_WINDOW_RESTART = new ImageIcon(windowRestartTitleURL);
-	private static final URL blankLabelURL = Main.class.getResource("logos/blankLabel.png");
-	public static final ImageIcon LABEL_BLANK = new ImageIcon(blankLabelURL);
 	private static final URL fullscreenTitleURL = Main.class.getResource("logos/fullscreenTitle.png");
 	public static final ImageIcon TITLE_FULLSCREEN = new ImageIcon(fullscreenTitleURL);
 	private static final URL fullscreenWindowedTitleURL = Main.class.getResource("logos/fullscreenWindowedTitle.png");
 	public static final ImageIcon TITLE_FULLSCREEN_WINDOWED = new ImageIcon(fullscreenWindowedTitleURL);
 	private static final URL windowedTitleURL = Main.class.getResource("logos/windowedTitle.png");
 	public static final ImageIcon TITLE_WINDOWED = new ImageIcon(windowedTitleURL);
+	private static final URL musicTitleURL = Main.class.getResource("logos/musicTitle.png");
+	public static final ImageIcon TITLE_MUSIC = new ImageIcon(musicTitleURL);
+	private static final URL mainThemeTitleURL = Main.class.getResource("logos/mainThemeTitle.png");
+	public static final ImageIcon TITLE_MAIN_THEME = new ImageIcon(mainThemeTitleURL);
+	private static final URL volumeTitleURL = Main.class.getResource("logos/volumeTitle.png");
+	public static final ImageIcon TITLE_VOLUME = new ImageIcon(volumeTitleURL);
 	
 	//***********************************
 	// Screens

@@ -24,7 +24,7 @@ public class Parameters extends JPanel {
 	// Components and settings
 	
 	private JLabel volume_icon;
-	private JSlider volume;
+	public JSlider volume;
 	private JButton parameters;
 	
 	public Parameters(Game game) {
@@ -71,6 +71,7 @@ public class Parameters extends JPanel {
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
 				Variables.VOLUME_Main = (float) volume.getValue() / 75;
+				game.options.volumeSlider.setValue(volume.getValue());
 				Music.refreshVolume();
 			}
 		});

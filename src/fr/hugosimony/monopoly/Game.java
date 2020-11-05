@@ -40,9 +40,9 @@ public class Game extends JFrame {
 	public JPanel mainPanel;
 	private JPanel options_cache;
 	private Timer timer;
-	private JPanel parameters;
+	public Parameters parameters;
 	public JPanel menu;
-	public JPanel options;
+	public Options options;
 	
 	//**************************************************************************
 	
@@ -227,8 +227,9 @@ public class Game extends JFrame {
         							c.setEnabled(true);
         					}
         				}
-        				else
+        				else {
         					showParametersPanel();
+        				}
         			}
         		}
         	}
