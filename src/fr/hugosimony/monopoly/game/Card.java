@@ -18,7 +18,7 @@ public class Card extends JPanel {
 	
 	public int width;
 	private int height;
-	private String name;
+	public String name;
 	private int prize;
 	private String special;
 

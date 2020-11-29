@@ -2,6 +2,7 @@ package fr.hugosimony.monopoly.game;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -21,7 +22,7 @@ public class Monopoly extends JPanel {
 	public int nbIA;
 	public int difficultyIA;
 	public ArrayList<MonopolyProfile> playerList;
-	
+	public HashMap<Integer, Card> cards = new HashMap<Integer, Card>();
 	
 	//**************************************************************************
 	// Components and settings
@@ -59,12 +60,13 @@ public class Monopoly extends JPanel {
 		plate.setLocation((game.width - height)/2, 0);
 		plate.setBackground(new Color(200,200,200));
 		plate.setVisible(true);
+
+		Card card;
 		
 		//**********************
 		// North Side
 		
 		for(int i = 0; i < 11; i++) {
-			Card card;
 			if(i == 0)
 				card = new Card(game, 1, new Color(0, 0, 0), "freepark", 100, "freepark");
 			else if(i == 1)
@@ -90,6 +92,7 @@ public class Monopoly extends JPanel {
 			int x = i >= 1 ? game.height/13 : 0;
 			card.setLocation(i*game.height/13 + x, 0);
 			card.setVisible(true);
+			cards.put(20+i, card);
 			plate.add(card);
 		}
 		
@@ -97,7 +100,6 @@ public class Monopoly extends JPanel {
 		// West Side
 		
 		for(int i = 1; i < 10; i++) {
-			Card card;
 			if(i == 1)
 				card = new Card(game, 2, Color.ORANGE, "pigalle", 100, "no");
 			else if(i == 2)
@@ -119,6 +121,7 @@ public class Monopoly extends JPanel {
 			int x = i >= 1 ? - game.height/13 : 0;
 			card.setLocation(0, game.height/6 + i*2*game.height/27 + x);
 			card.setVisible(true);
+			cards.put(10+i, card);
 			plate.add(card);
 		}
 
@@ -126,7 +129,6 @@ public class Monopoly extends JPanel {
 		// South Side
 		
 		for(int i = 0; i < 11; i++) {
-			Card card;
 			if(i == 0) 
 				card = new Card(game, 1, new Color(0, 0, 0), "hello", 100, "visitprison");
 			else if(i == 1)
@@ -152,8 +154,8 @@ public class Monopoly extends JPanel {
 			}
 			int x = i >= 1 ? game.height/13 : 0;
 			card.setLocation(i*game.height/13 + x, 5*game.height/6);
-			
 			card.setVisible(true);
+			cards.put(i, card);
 			plate.add(card);
 		}
 		
@@ -161,7 +163,6 @@ public class Monopoly extends JPanel {
 		// East Side
 		
 		for(int i = 1; i < 10; i++) {
-			Card card;
 			if(i == 1)
 				card = new Card(game, 4, Color.GREEN, "breteuil", 100, "no");
 			else if(i == 2)
@@ -183,8 +184,12 @@ public class Monopoly extends JPanel {
 			int x = i >= 1 ? game.height/13 : 0;
 			card.setLocation(height - 2*game.height/13 - 2, i*game.height/13 + x);
 			card.setVisible(true);
+			cards.put(30+i, card);
 			plate.add(card);
 		}
+		
+		// Debug
+		// cards.forEach((k,v) -> System.out.println("key: "+k+" - value: "+v.name));
 		
 		//**************************************************************************
 		// Adding components
