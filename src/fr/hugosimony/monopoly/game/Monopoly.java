@@ -8,7 +8,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.hugosimony.monopoly.Game;
-import fr.hugosimony.monopoly.game.MonopolyProfile;
 
 public class Monopoly extends JPanel {
 	private static final long serialVersionUID = 1L;
