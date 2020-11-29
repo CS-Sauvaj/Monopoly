@@ -2,8 +2,12 @@ package fr.hugosimony.monopoly.menus;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -22,15 +26,21 @@ public class Parameters extends JPanel {
 	
 	//**************************************************************************
 	// Components and settings
+
 	
+	private JLabel time;
+	public Date date;
+	public String hours;
+	public String minutes;
 	private JLabel volume_icon;
 	public JSlider volume;
 	private JButton parameters;
 	
+	@SuppressWarnings("deprecation")
 	public Parameters(Game game) {
 		
 		/*
-		 * Create the options panel with
+		 * Create the parameters panel with volume button and access to the options panel
 		 */
 		
 		//**************************************************************************
@@ -45,6 +55,27 @@ public class Parameters extends JPanel {
 		
 		//**************************************************************************
 		// Creating components
+
+		//**********************
+		// Time label
+		
+		time = new JLabel();
+		time.setBackground(getBackground());
+		time.setSize(game.width/5, 40);
+		time.setLocation(game.width/2 - (game.width/5)/2, 0); // Default
+		new Timer().schedule(new TimerTask() {
+			@Override
+			public void run() {
+				// Actualize the time every second
+				date = new Date();
+				hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours() + "";
+				minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes() + "";
+				time.setText(hours + ":" + minutes);
+			}
+		}, 0, 1000);
+		time.setFont(new Font("Kabel", Font.BOLD, 30));
+		time.setHorizontalAlignment(JLabel.CENTER);
+		time.setVerticalAlignment(JLabel.CENTER);
 		
 		//**********************
 		// Volume icon
@@ -103,6 +134,7 @@ public class Parameters extends JPanel {
 		//**************************************************************************
 		// Adding components
 		
+		add(time);
 		add(volume_icon);
 		add(volume);
 		add(parameters);

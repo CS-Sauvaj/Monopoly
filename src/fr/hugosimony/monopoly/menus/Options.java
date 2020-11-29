@@ -15,15 +15,15 @@ import javax.swing.event.ChangeListener;
 
 import fr.hugosimony.monopoly.Const;
 import fr.hugosimony.monopoly.Game;
-import fr.hugosimony.monopoly.Utils;
 import fr.hugosimony.monopoly.Variables;
 import fr.hugosimony.monopoly.audio.musics.Music;
+import fr.hugosimony.monopoly.utils.Utils;
 
 public class Options extends JPanel{
 	private static final long serialVersionUID = 1L;
 
 	//**************************************************************************
-	// Menu settings
+	// Options settings
 	
 	private int width;
 	private int height;

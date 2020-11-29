@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.monopoly.Const;
 import fr.hugosimony.monopoly.Game;
-import fr.hugosimony.monopoly.Utils;
 import fr.hugosimony.monopoly.Variables;
+import fr.hugosimony.monopoly.utils.Utils;
 
 public class Menu extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -137,6 +137,9 @@ public class Menu extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				multi = false;
+				game.menu.setVisible(false);
+				game.monopoly.setVisible(true);
+				System.out.println("test");
 			}
 		});
 		// Adding here to prevent next buttons to be invisible

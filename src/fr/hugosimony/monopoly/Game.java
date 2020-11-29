@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.monopoly.audio.AudioPaths;
 import fr.hugosimony.monopoly.audio.musics.Music;
+import fr.hugosimony.monopoly.game.Monopoly;
 import fr.hugosimony.monopoly.menus.Menu;
 import fr.hugosimony.monopoly.menus.Options;
 import fr.hugosimony.monopoly.menus.Parameters;
@@ -41,8 +42,9 @@ public class Game extends JFrame {
 	private JPanel options_cache;
 	private Timer timer;
 	public Parameters parameters;
-	public JPanel menu;
 	public Options options;
+	public JPanel menu;
+	public Monopoly monopoly;
 	
 	//**************************************************************************
 	
@@ -132,6 +134,12 @@ public class Game extends JFrame {
 		
 		menu = new Menu(this);
 		menu.setLocation(0,0);
+
+		//**********************
+		// Monopoly panel
+		
+		monopoly = new Monopoly(this);
+		monopoly.setLocation(0,0);
 		
 		//**************************************************************************
 		// Adding components
@@ -140,6 +148,7 @@ public class Game extends JFrame {
 		mainPanel.add(parameters);
 		mainPanel.add(options);
 		mainPanel.add(menu);
+		mainPanel.add(monopoly);
 		add(mainPanel);
 		
 		//**************************************************************************

@@ -1,5 +1,7 @@
 package fr.hugosimony.monopoly;
 
+import fr.hugosimony.monopoly.utils.fonts.Fonts;
+
 public class Main {
 	
 	/*
@@ -12,6 +14,10 @@ public class Main {
 		 * Start the menu of the Monopoly (first function called)
 		 */
 	      
+		// Load all the added fonts
+		Fonts.loadFonts();
+		
+		// Start the game frame
 		Game menu = new Game();
 		menu.setVisible(true);
 	}
