@@ -28,6 +28,7 @@ public class Menu extends JPanel {
 	private JButton newGameButton;
 	private JButton loadButton;
 	private JButton exitButton;
+	@SuppressWarnings("unused")
 	private boolean multi;
 	private JButton soloButton;
 	private JButton multiButton;
